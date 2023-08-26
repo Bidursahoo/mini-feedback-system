@@ -85,12 +85,21 @@ app.post("/feedback",(req,response)=>{
 
 app.post("/update",(req,res)=>{
     const {ownerId , mail , topic , content , updated} = req.body;
-    console.log(ownerId)
     FeedBackModel.findOneAndUpdate({ _id: ownerId }, {
         mail,
         topic,
         content,
         updated
+    }).catch((err) => {
+        res.send({ status: 0 });
+    }).then(() => {
+        res.send({ status: 1 });
+    });
+})
+
+app.post("/delete" , (req,res)=>{
+    FeedBackModel.findOneAndUpdate({ _id: req.body.id }, {
+        deleted:true
     }).catch((err) => {
         res.send({ status: 0 });
     }).then(() => {

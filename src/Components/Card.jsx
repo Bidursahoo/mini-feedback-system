@@ -1,6 +1,8 @@
 import React from "react";
 import FeedBackUpdate from "./FeedBackUpdate";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+
 
 export default function Card(props) {
   const navigate = useNavigate();
@@ -13,12 +15,21 @@ export default function Card(props) {
     }))
     navigate("/feedbacklist/update");
   }
+  const handleDeleteClick =() =>{
+    axios.post("http://localhost:3004/delete",{id:props.tempKey}).then((res)=>{
+      if(res.data.status === 0){
+        navigate("/error")
+      }else{
+        navigate("/success")
+      }
+    })
+  }
   return (
     <>
-      {props.deleteStatus ? (
+      {(props.deleteStatus) ? (
         <div className="card border-danger w-25 m-auto mt-3">
           <div className="card-body">
-            <h5 className="card-title">Deleted Feedback </h5>
+            <h5 className="card-title text-danger">Deleted Feedback </h5>
           </div>
         </div>
       ) : (props.updateStatus) ? (
@@ -34,7 +45,7 @@ export default function Card(props) {
             <br />
             {(localStorage.getItem("authTocken"))?(<>
               <button className="btn btn-success" onClick={handleClick}>Update</button>
-            <button className="btn btn-danger">Delete</button>
+            <button className="btn btn-danger" onClick={handleDeleteClick}>Delete</button>
             </>):(
               <></>
             )}
@@ -53,7 +64,7 @@ export default function Card(props) {
             <br />
             {(localStorage.getItem("authTocken"))?(<>
               <button className="btn btn-success" onClick={handleClick}>Update</button>
-            <button className="btn btn-danger">Delete</button>
+            <button className="btn btn-danger" onClick={handleDeleteClick}>Delete</button>
             </>):(
               <></>
             )}

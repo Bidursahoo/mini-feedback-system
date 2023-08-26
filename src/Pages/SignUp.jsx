@@ -25,7 +25,7 @@ export default function SignUp() {
       axios
         .post("http://localhost:3004/register", details)
         .then((result) => {
-            if(result.data.status === 0){
+            if(result.data.status === 1){
                 navigate("/")
             }
         })

@@ -33,7 +33,7 @@ export default function AdminPannel() {
                 content={ele.content}
                 mail={ele.mail}
                 updateStatus={ele.updated}
-                deleteStatus={ele.deleteStatus}
+                deleteStatus={ele.deleted}
               />
             ))}
           </div>
