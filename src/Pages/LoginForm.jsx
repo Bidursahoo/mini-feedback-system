@@ -1,5 +1,6 @@
 import React from "react";
 import "./Login.css";
+import { Link } from "react-router-dom";
 export default function LoginForm() {
   return (
     <div className="login-form">
@@ -28,7 +29,7 @@ export default function LoginForm() {
         </div>
       </form>
       <p class="text-center">
-        <a>Create an Account</a>
+        <Link to="/signup">Create an Account</Link>
       </p>
     </div>
   );

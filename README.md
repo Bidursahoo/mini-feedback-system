@@ -1,3 +1,7 @@
+# Phases 
+phase 1: creation of all the pages.
+phase 2: using react router we will route it.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
