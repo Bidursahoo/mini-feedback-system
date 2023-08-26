@@ -5,8 +5,10 @@ import AdminLogin from "./Pages/AdminLogin";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import LoginForm from "./Pages/LoginForm";
 import SignUp from "./Pages/SignUp";
-import Success from "./Pages/Success";
-import Error from "./Pages/Error";
+import Success from "./UtilityPages/Success";
+import Error from "./UtilityPages/Error";
+import FeedbackList from "./Components/FeedbackList";
+import FeedBackUpdate from "./Components/FeedBackUpdate";
 function App() {
   return (
     <BrowserRouter>
@@ -14,6 +16,8 @@ function App() {
         <Route path="/" element={<LoginForm/>}/>
         <Route path="/signup" element={<SignUp/>}/>
         <Route path="/feedback" element={<FeedBackForm/>}/>
+        <Route path="/feedbacklist" element={<FeedbackList/>}/>
+        <Route path="/feedbacklist/update" element={<FeedBackUpdate/>}/>
         <Route path="/admin" element={<AdminLogin/>}/>
         <Route path="/adminpannel" element={<AdminPannel/>}/>
         <Route path="/success" element={<Success/>}/>
