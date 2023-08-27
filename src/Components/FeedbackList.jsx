@@ -47,8 +47,8 @@ export default function FeedbackList() {
               />
             ))}
           </div> */}
-          <table class="table table-striped">
-          <thead>
+          <table class="table table-bordered table-striped">
+          <thead className="font-weight-bold">
             <th>No.</th>
             <th>Topic</th>
             <th>Email</th>
@@ -64,7 +64,7 @@ export default function FeedbackList() {
               <></>
             )}
           </thead>
-          <tbody>
+          <tbody className="font-weight-normal">
             {feedbacks.map((ele, index) => (
               <Card
                 index={index}
