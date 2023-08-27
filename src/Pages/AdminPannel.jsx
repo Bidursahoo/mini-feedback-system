@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function AdminPannel() {
   const navigate = useNavigate();
-  const [feedbacks, setFeedbacks] = useState([]); // Initialize as an empty array
+  const [feedbacks, setFeedbacks] = useState([]);
   useEffect(() => {
     loadData();
   }, []);
@@ -20,15 +20,38 @@ export default function AdminPannel() {
         <>
           <h1 className="text-center">Admin Panel</h1>
           <div className="text-center">
-            <button className="btn btn-danger" onClick={() => {localStorage.removeItem("admin")
-          navigate("/admin")}}>
+            <button
+              className="btn btn-danger"
+              onClick={() => {
+                localStorage.removeItem("admin");
+                navigate("/admin");
+              }}
+            >
               Log Out
             </button>
           </div>
-          <div className="row">
-            {feedbacks.map((ele) => (
+          <table class="table table-bordered table-striped">
+          <thead className="font-weight-bold">
+            <th>No.</th>
+            <th>Topic</th>
+            <th>Email</th>
+            <th>Content</th>
+            <th>Update Status</th>
+            <th>Delete Status</th>
+            {localStorage.getItem("authTocken") ? (
+              <>
+                <th>Update Btn</th>
+                <th>Delete Btn</th>
+              </>
+            ) : (
+              <></>
+            )}
+          </thead>
+          <tbody className="font-weight-normal">
+            {feedbacks.map((ele, index) => (
               <Card
-                key={ele.id} // Don't forget to add a unique key
+                index={index}
+                key={ele._id}
                 topic={ele.topic}
                 content={ele.content}
                 mail={ele.mail}
@@ -36,7 +59,8 @@ export default function AdminPannel() {
                 deleteStatus={ele.deleted}
               />
             ))}
-          </div>
+          </tbody>
+          </table>
         </>
       ) : (
         <>
