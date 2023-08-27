@@ -34,19 +34,7 @@ export default function FeedbackList() {
               Give Feedback
             </button>
           </div>
-          {/* <div className="row">
-            {feedbacks.map((ele) => (
-              <Card
-                key={ele._id} 
-                tempKey={ele._id}
-                topic={ele.topic}
-                content={ele.content}
-                mail={ele.mail}
-                updateStatus={ele.updated}
-                deleteStatus={ele.deleted}
-              />
-            ))}
-          </div> */}
+          
           <table class="table table-bordered table-striped">
           <thead className="font-weight-bold">
             <th>No.</th>

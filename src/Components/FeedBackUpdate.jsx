@@ -5,9 +5,6 @@ import Error from "../UtilityPages/Error";
 
 
 export default function FeedBackUpdate(props) {
-    // useEffect(()=>{
-    //     console.log(JSON.parse(localStorage.getItem("details")))
-    // })
   const navigate = useNavigate();
   const [feedback , setFeedback] = useState({
     ownerId: JSON.parse(localStorage.getItem("details")).id,

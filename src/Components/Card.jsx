@@ -1,12 +1,10 @@
 import React from "react";
-// import FeedBackUpdate from "./FeedBackUpdate";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export default function Card(props) {
   const navigate = useNavigate();
   const handleClick = () => {
-    // console.log(props)
     localStorage.setItem(
       "details",
       JSON.stringify({

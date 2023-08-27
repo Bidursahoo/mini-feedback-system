@@ -59,11 +59,6 @@ app.post("/register" , (req,response)=>{
             })
         }
     })
-   
-    // bcrypt.hash(password , salt).then(()=>{
-    //     userModel.create({uname: uname , email:email , password:password}).then(user => res.json(user)).catch(err=>console.log(err))
-    // })
-    // console.log(req.body);
 })
 
 
