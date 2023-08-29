@@ -12,7 +12,7 @@ const port = 3004;
 
 
 const app = express();
-app.use(express.json())  //same work as body parser
+app.use(express.json())  //Note: same work as body parser
 app.use(cors());
 
 

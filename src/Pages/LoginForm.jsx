@@ -69,7 +69,7 @@ export default function LoginForm() {
           />
         </div>
         <div className="form-group">
-          <button type="submit" className="btn btn-primary btn-block">
+        <button type="submit" className="btn btn-primary btn-block">
             Log in
           </button>
         </div>
